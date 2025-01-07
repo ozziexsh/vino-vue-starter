@@ -1,3 +1,17 @@
+<php>
+use Ozzie\Vino\Page;
+
+Page::middleware(['auth']);
+
+$logout = function() {
+    auth()->logout();
+
+    return redirect()->route('login');
+};
+
+$user = auth()->user();
+</php>
+
 <script setup lang="ts">
 import { CircleUser, Home, Menu, Package2 } from 'lucide-vue-next';
 import { Button } from '@/components/ui/button';
